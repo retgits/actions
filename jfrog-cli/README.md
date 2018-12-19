@@ -4,15 +4,21 @@ The [JFrog CLI](https://jfrog.com/getcli/) is a compact and smart client that pr
 
 And now it is available for GitHub actions too!
 
-![JFrog CLI Action]()
+![JFrog CLI Action](./jfrogcli.png)
 
 ## Usage
 
 To use the action simply add the following lines to your `.github/main.workflow`
 
 ```hcl
-action "JFrog CLI" {
+action "JFrog CLI for GitHub Actions" {
   uses = "retgits/actions/jfrog-cli@master"
+  secrets = ["USER", "PASSWORD", "URL"]
+  env = {
+    COMMAND = "cmd"
+    COMMANDOPTS = "opts"
+    COMMANDARGS = "args"
+  }
 }
 ```
 
@@ -25,6 +31,8 @@ You'll need to provide some environment variables to provide the authentication 
 | Login Credentials   | USER and PASSWORD |
 | API Key             | APIKEY            |
 | Access Token        | ACCESSTOKEN       |
+
+_These are the variables you want to create as "secrets"_
 
 Other than the authentication, the following environment variables are required for this Action to work:
 
