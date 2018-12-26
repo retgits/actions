@@ -36,6 +36,7 @@ _These are the variables you want to create as "secrets"_
 
 Other than the authentication, the following environment variables are required for this Action to work:
 
+* **CRED**: The credential type passed in. Valid values are "username", "apikey", and "accesstoken"
 * **URL**: The Artifactory URL
 * **COMMAND**: The command to execute. Note that you can use either the full command name or its abbreviation.
 * **COMMANDOPTS**: A set of options corresponding to the command

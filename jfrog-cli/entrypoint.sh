@@ -2,17 +2,16 @@
 
 set -e
 
-if [ -z ${USER+x} ]; 
+echo "Authentication using $CRED";
+
+if [ $CRED == "username" ]; 
 then 
-    echo "Authentication using username/password";
     sh -c "jfrog rt $COMMAND --url=$URL --user=$USER --password=$PASSWORD $COMMANDOPTS $COMMANDARGS"
-elif [ -z ${APIKEY+x} ];
+elif [ $CRED == "apikey" ];
 then 
-    echo "Authentication using API key";
     sh -c "jfrog rt $COMMAND --apikey=$APIKEY $COMMANDOPTS $COMMANDARGS"
-elif [ -z ${ACCESSTOKEN+x} ];
+elif [ $CRED == "accesstoken" ];
 then 
-    echo "Authentication using Access Token";
     sh -c "jfrog rt $COMMAND --access-token=$ACCESSTOKEN $COMMANDOPTS $COMMANDARGS"
 else 
     echo "ERROR! No authentication has been set :("; 
