@@ -12,7 +12,7 @@ To use the action simply add the following lines to your `.github/main.workflow`
 
 ```hcl
 action "JFrog CLI for GitHub Actions" {
-  uses = "retgits/actions/jfrog-cli@master"
+  uses = "retgits/actions/jfrog-cli-go@master"
   secrets = ["USER", "PASSWORD", "URL"]
   env = {
     COMMAND = "cmd"
