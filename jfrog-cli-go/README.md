@@ -1,6 +1,6 @@
 # JFrog CLI for GitHub Actions
 
-The [JFrog CLI](https://jfrog.com/getcli/) is a compact and smart client that provides a simple interface that automates access to JFrog products simplifying your automation scripts and making them more readable and easier to maintain.
+The [JFrog CLI](https://jfrog.com/getcli/) is a compact and smart client that provides a simple interface that automates access to JFrog products simplifying your automation scripts and making them more readable and easier to maintain. This version also has `go` installed into the container.
 
 And now it is available for GitHub actions too!
 
@@ -16,8 +16,6 @@ action "JFrog CLI for GitHub Actions" {
   secrets = ["USER", "PASSWORD", "URL"]
   env = {
     COMMAND = "cmd"
-    COMMANDOPTS = "opts"
-    COMMANDARGS = "args"
   }
 }
 ```
@@ -38,9 +36,7 @@ Other than the authentication, the following environment variables are required 
 
 * **CRED**: The credential type passed in. Valid values are "username", "apikey", and "accesstoken"
 * **URL**: The Artifactory URL
-* **COMMAND**: The command to execute. Note that you can use either the full command name or its abbreviation.
-* **COMMANDOPTS**: A set of options corresponding to the command
-* **COMMANDARGS**: A set of arguments corresponding to the command
+* **COMMAND**: The command to execute, but without `jfrog rt` (like `build-publish my-build 1`)
 
 ## Known limitations
 

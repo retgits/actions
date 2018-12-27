@@ -16,8 +16,6 @@ action "JFrog CLI for GitHub Actions" {
   secrets = ["USER", "PASSWORD", "URL"]
   env = {
     COMMAND = "cmd"
-    COMMANDOPTS = "opts"
-    COMMANDARGS = "args"
   }
 }
 ```
@@ -38,9 +36,7 @@ Other than the authentication, the following environment variables are required 
 
 * **CRED**: The credential type passed in. Valid values are "username", "apikey", and "accesstoken"
 * **URL**: The Artifactory URL
-* **COMMAND**: The command to execute. Note that you can use either the full command name or its abbreviation.
-* **COMMANDOPTS**: A set of options corresponding to the command
-* **COMMANDARGS**: A set of arguments corresponding to the command
+* **COMMAND**: The command to execute, but without `jfrog rt` (like `build-publish my-build 1`)
 
 ## Known limitations
 
