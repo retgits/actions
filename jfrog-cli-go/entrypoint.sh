@@ -17,4 +17,14 @@ else
     echo "ERROR! No authentication has been set :("; 
 fi
 
-sh -c "jfrog rt $COMMAND"
+for cmd in "$COMMAND"; do
+    echo "Running '$cmd'..."
+    if sh -c "jfrog rt $cmd"; then
+        # no op
+        echo "Successfully ran '$cmd'"
+    else
+        exit_code=$?
+        echo "Failure running '$cmd', exited with $exit_code"
+        exit $exit_code
+    fi
+done
