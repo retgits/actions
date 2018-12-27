@@ -14,8 +14,9 @@ To use the action simply add the following lines to your `.github/main.workflow`
 action "JFrog CLI for GitHub Actions" {
   uses = "retgits/actions/jfrog-cli@master"
   secrets = ["USER", "PASSWORD", "URL"]
+  args = ["cmd"]
   env = {
-    COMMAND = "cmd"
+    CRED = "username"
   }
 }
 ```
@@ -36,7 +37,7 @@ Other than the authentication, the following environment variables are required 
 
 * **CRED**: The credential type passed in. Valid values are "username", "apikey", and "accesstoken"
 * **URL**: The Artifactory URL
-* **COMMAND**: The command to execute, but without `jfrog rt` (like `build-publish my-build 1`)
+* **args**: The command to execute, but without `jfrog rt` (like `build-publish my-build 1`)
 
 ## Known limitations
 
