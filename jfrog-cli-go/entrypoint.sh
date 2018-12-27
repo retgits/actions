@@ -17,7 +17,7 @@ else
     echo "ERROR! No authentication has been set :("; 
 fi
 
-for cmd in "$COMMAND"; do
+for cmd in "$@"; do
     echo "Running '$cmd'..."
     if sh -c "jfrog rt $cmd"; then
         # no op
