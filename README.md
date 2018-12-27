@@ -5,3 +5,4 @@ This is a collection of [GitHub Actions](https://github.com/features/actions) th
 ## Work in progress
 
 * JFrog CLI for Artifactory
+* JFrog CLI (with Go) for Artifactory --> A bigger image, but has Golang installed as well for Go projects

@@ -9,14 +9,21 @@ LABEL "com.github.actions.description"="Runs a JFrog CLI Command"
 LABEL "com.github.actions.icon"="compass"
 LABEL "com.github.actions.color"="green"
 
-ENV JFROG_CLI_OFFER_CONFIG=false
+ENV GOVERSION=1.11.4
+
 COPY LICENSE README.md THIRD_PARTY_NOTICE.md entrypoint.sh /
 RUN apt-get update &&\
-    apt-get install curl -y &&\
+    apt-get install curl git -y &&\
     rm -rf /var/lib/apt/lists/* &&\
     curl -fL https://getcli.jfrog.io | sh &&\
     mv jfrog /bin &&\
     chmod +x entrypoint.sh &&\
+    curl -fL -o go${GOVERSION}.linux-amd64.tar.gz https://dl.google.com/go/go${GOVERSION}.linux-amd64.tar.gz &&\
+    tar -C /usr/local -xzf go${GOVERSION}.linux-amd64.tar.gz &&\
+    rm go${GOVERSION}.linux-amd64.tar.gz &&\
     mv entrypoint.sh /bin
+
+ENV JFROG_CLI_OFFER_CONFIG=false
+ENV PATH=$PATH:/usr/local/go/bin
 
 ENTRYPOINT ["entrypoint.sh"]
