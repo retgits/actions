@@ -1,7 +1,7 @@
 FROM debian:stretch-slim
 
 LABEL "name"="jfrog-cli"
-LABEL "maintainer"="retgits <lstigter@gmail.com>"
+LABEL "maintainer"="retgits"
 LABEL "version"="0.0.2"
 
 LABEL "com.github.actions.name"="JFrog CLI for GitHub Actions"
