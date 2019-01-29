@@ -2,7 +2,7 @@ FROM debian:stretch-slim
 
 LABEL "name"="gocenter"
 LABEL "maintainer"="retgits"
-LABEL "version"="0.0.1"
+LABEL "version"="0.1.0"
 
 LABEL "com.github.actions.name"="GoCenter for GitHub Actions"
 LABEL "com.github.actions.description"="Runs actions using GoCenter"

@@ -2,7 +2,7 @@ FROM debian:stable-slim
 
 LABEL "name"="sh"
 LABEL "maintainer"="retgits"
-LABEL "version"="0.0.1"
+LABEL "version"="0.1.0"
 
 LABEL "com.github.actions.name"="Shell for GitHub Actions"
 LABEL "com.github.actions.description"="Runs one or more commands in an Action"

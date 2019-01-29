@@ -12,8 +12,8 @@ Source for each package is available at `https://packages.debian.org/source/{pac
 
 ## Golang
 
-License and other copyright information for the JFrog CLI included in the image at `https://golang.org/LICENSE`.
+License and other copyright information for Go included in the image at `https://golang.org/LICENSE`.
 
 ## JFrog CLI
 
-License and other copyright information for Go included in the image at `https://github.com/jfrog/jfrog-cli-go`.
+License and other copyright information for the JFrog CLI included in the image at `https://github.com/jfrog/jfrog-cli-go`.
