@@ -17,7 +17,7 @@ RUN apt-get update &&\
     apt-get install curl git -y &&\
     rm -rf /var/lib/apt/lists/* &&\
     curl -fL https://getgoc.gocenter.io | sh &&\
-    mv jfrog /bin &&\
+    mv goc /bin &&\
     chmod +x entrypoint.sh &&\
     curl -fL -o go${GOVERSION}.linux-amd64.tar.gz https://dl.google.com/go/go${GOVERSION}.linux-amd64.tar.gz &&\
     tar -C /usr/local -xzf go${GOVERSION}.linux-amd64.tar.gz &&\

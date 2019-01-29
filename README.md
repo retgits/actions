@@ -2,6 +2,8 @@
 
 This is a collection of [GitHub Actions](https://github.com/features/actions) that use and that I experiment with :smile:
 
+* [GoCenter](./gocenter): An action to build Go apps using Go modules resolved from [GoCenter](https://gocenter.jfrog.com/stats)
+
 ## Work in progress
 
 * JFrog CLI for Artifactory

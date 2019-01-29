@@ -9,7 +9,7 @@
 To use the action simply add the following lines to your `.github/main.workflow`
 
 ```hcl
-action "GoCenter for GitHub Actionss" {
+action "GoCenter for GitHub Actions" {
   uses = "retgits/actions/gocenter@master"
   args = ["build"]
 }
