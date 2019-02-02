@@ -1,7 +1,6 @@
 # Release action
 
-<!-- markdownlint-disable MD033 -->
-<img src="https://github.com/retgits/actions/blob/master/github-release/release.png?raw=true" align="right" width=256/>
+![action](./release.png)
 
 ## Details
 

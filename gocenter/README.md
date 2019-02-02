@@ -1,6 +1,6 @@
 # GoCenter action
 
-![GoCenter Action](./gocenter.png)
+![action](./gocenter.png)
 
 ## Details
 

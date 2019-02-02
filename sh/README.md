@@ -1,7 +1,6 @@
 # sh action
 
-<!-- markdownlint-disable MD033 -->
-<img src="https://github.com/retgits/actions/blob/master/sh/sh-action.png?raw=true" align="right" width=256/>
+![action](./sh.png)
 
 ## Details
 
