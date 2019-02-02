@@ -1,14 +1,36 @@
-# JFrog CLI for GitHub Actions
-
-The [JFrog CLI](https://jfrog.com/getcli/) is a compact and smart client that provides a simple interface that automates access to JFrog products simplifying your automation scripts and making them more readable and easier to maintain. This version also has `go` installed into the container.
-
-And now it is available for GitHub actions too!
+# JFrog CLI (Go) action
 
 ![JFrog CLI Action](./jfrogcli.png)
 
+## Details
+
+| Item              | Description                                                                  |
+|-------------------|------------------------------------------------------------------------------|
+| Purpose           | A wrapper around the [JFrog CLI](https://jfrog.com/getcli/)                  |
+| Usage             | Executes commands against [JFrog Artifactory](https://jfrog.com/artifactory) |
+| Limitations       | Only supports JFrog Artifactory, not any of the other JFrog products         |
+| Base container    | [golang:alpine](https://hub.docker.com/_/golang?tab=description)             |
+| Language runtimes | [Go 1.11.5](https://golang.org/doc/go1.11)                                   |
+| Additional tools  | git, curl, wget                                                              |
+
 ## Usage
 
-To use the action simply add the following lines to your `.github/main.workflow`
+The action can be used in a workflow to execute actions against JFrog Artifactory. The actions must be supplied as the `args` parameter and will be prefixed with `jfrog rt` by the [script](./entrypoint.sh). This action supports three mechanisms to authenticate to Artifactory and based on which type you choose the variable `CRED` (which determines the credential type) has to be set as well.
+
+| Authentication type | Variables to set  | Set `CRED` to |
+|---------------------|-------------------|---------------|
+| Login Credentials   | USER and PASSWORD | username      |
+| API Key             | APIKEY            | apikey        |
+| Access Token        | ACCESSTOKEN       | accesstoken   |
+
+As you're setting these, _please make sure you set them as "secrets"_
+
+There are two other environment variables that are required
+
+| Variable | Description                                                                      |
+|----------|----------------------------------------------------------------------------------|
+| `URL`    | The Artifactory URL                                                              |
+| `args`   | The command to execute, but without `jfrog rt` (like `build-publish my-build 1`) |
 
 ```hcl
 action "JFrog CLI for GitHub Actions" {
@@ -20,29 +42,3 @@ action "JFrog CLI for GitHub Actions" {
   }
 }
 ```
-
-## Environment Variables
-
-You'll need to provide some environment variables to provide the authentication for the JFrog CLI to work. The order listed below is the order of precedence for this GitHub Action.
-
-| Authentication type | Variables to set  |
-|---------------------|-------------------|
-| Login Credentials   | USER and PASSWORD |
-| API Key             | APIKEY            |
-| Access Token        | ACCESSTOKEN       |
-
-_These are the variables you want to create as "secrets"_
-
-Other than the authentication, the following environment variables are required for this Action to work:
-
-* **CRED**: The credential type passed in. Valid values are "username", "apikey", and "accesstoken"
-* **URL**: The Artifactory URL
-* **args**: The command to execute, but without `jfrog rt` (like `build-publish my-build 1`)
-
-## Known limitations
-
-The current version of this Action works only with JFrog Artifactory and doesn't expose any of the other services that JFrog CLI supports (yet)
-
-## License
-
-The Dockerfile and associated scripts and documentation in this project are released under the [MIT License](LICENSE).

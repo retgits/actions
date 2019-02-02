@@ -1,14 +1,22 @@
 # GitHub Actions
 
+![license](https://img.shields.io/github/license/retgits/actions.svg?style=flat-square)
+![stability](https://img.shields.io/badge/stability-alpha-yellowgreen.svg?style=flat-square)
+
 ![actions](./actions.jpg)
 
-This is a collection of [GitHub Actions](https://github.com/features/actions) that use and that I experiment with :smile:
+This is a collection of [GitHub Actions](https://github.com/features/actions) to help build software.
+Detailed documentation on how to use each action located on their folder.
 
-* [GoCenter](./gocenter): An action to build Go apps using Go modules resolved from [GoCenter](https://gocenter.jfrog.com/stats)
-* [JFrog CLI](./jfrog-cli): An action that makes use of [JFrog Artifactory](https://jfrog.com/artifactory)
-* [JFrog CLI (Go)](./jfrog-cli-go): An action that makes use of [JFrog Artifactory](https://jfrog.com/artifactory) and has [Go](https://golang.org) installed
-* [sh](./sh): A shell action, forked from the official repository with a few added packages
+## Available actions
+
+| Action                           | Description                                                | Language runtimes |
+|----------------------------------|------------------------------------------------------------|-------------------|
+| [GoCenter](./gocenter)           | [GoCenter](https://gocenter.jfrog.com/stats) wrapper       | Go 1.11.5         |
+| [JFrog CLI](./jfrog-cli)         | [JFrog CLI](https://github.com/jfrog/jfrog-cli-go) wrapper | none              |
+| [JFrog CLI (Go)](./jfrog-cli-go) | [JFrog CLI](https://github.com/jfrog/jfrog-cli-go) wrapper | Go 1.11.5         |
+| [sh](./sh)                       | A multi-purpose [Alpine](https://alpinelinux.org) image    | none              |
 
 ## LICENSE
 
-The Actions in this repository are licensed with the [MIT license](./LICENSE), unless otherwise noted in the license files of the respective actions.
+The Actions in this repository are licensed with the [MIT license](./LICENSE).

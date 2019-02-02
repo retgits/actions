@@ -1,24 +1,24 @@
-# GitHub Actions for GoCenter
+# GoCenter action
 
-[GoCenter](https://gocenter.io/) is a cloud service that houses Go modules (archives of Go sources for a package and its metadata) and generates Go module metadata, if needed. The official Go client resolves dependencies from a single remote repository set by the GOPROXY environment variable and doesn't support fallback to other module or source repositories. So if a dependency isn't stored in the repository set by GOPROXY, the build fails. So, this GitHub Action contains the [goc](https://github.com/jfrog/goc) utility, which is a wrapper for the go client that correctly builds Go applications using packages from GoCenter and falls back to getting modules from source control systems if they're not found.
+![GoCenter Action](./gocenter.png)
 
-![GoCenter Action](./gocenter-action.png)
+## Details
+
+| Item              | Description                                                                                                       |
+|-------------------|-------------------------------------------------------------------------------------------------------------------|
+| Purpose           | A wrapper around the [goc](https://github.com/jfrog/goc) to use with [GoCenter](https://gocenter.jfrog.com/stats) |
+| Usage             | Build Go apps using modules resolved from [GoCenter](https://gocenter.jfrog.com/stats)                            |
+| Base container    | [golang:alpine](https://hub.docker.com/_/golang?tab=description)                                                  |
+| Language runtimes | [Go 1.11.5](https://golang.org/doc/go1.11)                                                                        |
+| Additional tools  | git, curl, wget                                                                                                   |
 
 ## Usage
 
-To use the action simply add the following lines to your `.github/main.workflow`
+The action can be used in a workflow to execute any **Go** action. The actions must be supplied as an array to the `args` parameter and each individual action will be executed via `sh -c` and prefixed with `goc` (instead of `go build`, the args would be just `build`).
 
 ```hcl
 action "GoCenter for GitHub Actions" {
-  uses = "retgits/actions/gocenter@master"
-  args = ["build"]
+  uses = "retgits/actions/goc@master"
+  args = ["ls -ltr"]
 }
 ```
-
-## Command
-
-The `args` will be prefixed with the `goc` command automaticall (using the [entrypoint](./entrypoint.sh) script), so running `go build` means your cmd should just be `build`
-
-## License
-
-The Dockerfile and associated scripts and documentation in this project are released under the [MIT License](LICENSE).
