@@ -10,6 +10,10 @@ LABEL "com.github.actions.icon"="settings"
 LABEL "com.github.actions.color"="green"
 
 COPY LICENSE README.md THIRD_PARTY_NOTICE.md entrypoint.sh /
+
+RUN chmod +x entrypoint.sh &&\
+    mv entrypoint.sh /bin
+
 ENV PATH=$PATH:/usr/local/go/bin
 
 ENTRYPOINT ["entrypoint.sh"]
