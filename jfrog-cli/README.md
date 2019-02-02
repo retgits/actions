@@ -1,6 +1,6 @@
 # JFrog CLI action
 
-![action](./jfrog-cli.png)
+![action](./jfrogcli.png)
 
 ## Details
 
