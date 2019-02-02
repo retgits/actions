@@ -2,7 +2,7 @@ FROM alpine:3.9
 
 LABEL "name"="release"
 LABEL "maintainer"="retgits"
-LABEL "version"="0.1.0"
+LABEL "version"="0.2.0"
 
 LABEL "com.github.actions.name"="Release for GitHub Actions"
 LABEL "com.github.actions.description"="Creates a new release on GitHub"
