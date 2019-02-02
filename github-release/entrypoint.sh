@@ -23,5 +23,5 @@ fi
 if [ "$DIST" == "-version" ]; then
     ghr -version
 else
-    sh -c ghr -t "${GH_PAT}" -u "${GITHUB_ACTOR}" -r "${REPO}" -n "${VERSION}" --replace "${VERSION}" "${DIST}"
+    exec ghr -t "${GH_PAT}" -u "${GITHUB_ACTOR}" -r "${REPO}" -n "${VERSION}" --replace "${VERSION}" "${DIST}"
 fi
