@@ -22,6 +22,7 @@ fi
 ## Execute the command
 if [ "$DIST" == "--help" ]; then
     ghr --help
+    exit 0
 else
     sh -c ghr -t "${GITHUB_TOKEN}" -u "${GITHUB_ACTOR}" -r "${REPO}" -n "${VERSION}" -replace "${VERSION}" "${DIST}"
 fi
