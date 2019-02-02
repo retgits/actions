@@ -23,5 +23,6 @@ fi
 if [ "$DIST" == "-version" ]; then
     ghr -version
 else
-    sh -c ghr -t "${GITHUB_TOKEN}" -u "${GITHUB_ACTOR}" -r "${REPO}" -n "${VERSION}" -replace "${VERSION}" "${DIST}"
+    echo ghr -u "${GITHUB_ACTOR}" -r "${REPO}" -n "${VERSION}" --replace "${VERSION}" "${DIST}"
+    sh -c ghr -t "${GITHUB_TOKEN}" -u "${GITHUB_ACTOR}" -r "${REPO}" -n "${VERSION}" --replace "${VERSION}" "${DIST}"
 fi
