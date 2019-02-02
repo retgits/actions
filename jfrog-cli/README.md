@@ -1,6 +1,7 @@
 # JFrog CLI action
 
-![JFrog CLI Action](./jfrogcli.png)
+<!-- markdownlint-disable MD033 -->
+<img src="https://github.com/retgits/actions/blob/master/jfrog-cli/jfrogcli.png?raw=true" align="right" width=256/>
 
 ## Details
 
