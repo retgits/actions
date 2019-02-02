@@ -4,7 +4,7 @@ workflow "Validate Actions" {
 }
 
 action "Test GoCenter Action" {
-  uses = "retgits/actions/gocenter@master"
+  uses = "retgits/actions/gocenter@alpine"
   args = ["-v", "version"]
 }
 
