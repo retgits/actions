@@ -16,11 +16,11 @@ BRANCH=${GITHUB_REF//refs\/heads\//}
 VERSION=v${BRANCH//refs\/tags\//}
 if [ ${#VERSION} -eq 1 ]; then
     VERSION=$(date +v%Y%m%d%H%M%S)
-    echo "Bo version found, setting default version based on date/time to ${VERSION}" 
+    echo "No version found, setting default version based on date/time to ${VERSION}" 
 fi
 
 ## Execute the command
-if [ "$DIST" != "--help" ]; then
+if [ "$DIST" == "--help" ]; then
     ghr --help
 else
     sh -c ghr -t "${GITHUB_TOKEN}" -u "${GITHUB_ACTOR}" -r "${REPO}" -n "${VERSION}" -replace "${VERSION}" "${DIST}"

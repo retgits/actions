@@ -18,7 +18,7 @@
 The action can be used in a workflow to create a new release on GitHub in the repository where the workflow runs. If the `ARTIFACT_DIR` is not provided, the script will set it to `dist/`. The name of the new version will be the tag that triggered this release. If no valid tag is found, a version will be created using the current date/time.
 
 ```hcl
-action "Shell" {
+action "Release" {
   uses = "retgits/actions/github-release@master"
   secrets = ["GITHUB_TOKEN"]
   env = {
