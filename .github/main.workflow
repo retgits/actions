@@ -27,6 +27,6 @@ action "Test for Release" {
   uses = "retgits/actions/github-release@master"
   secrets = ["GITHUB_TOKEN"]
   env = {
-    ARTIFACT_DIR = "--help"
+    ARTIFACT_DIR = "-version"
   }
 }

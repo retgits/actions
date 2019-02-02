@@ -20,7 +20,7 @@ if [ ${#VERSION} -eq 1 ]; then
 fi
 
 ## Execute the command
-if [ "$DIST" == "--help" ]; then
+if [ "$DIST" == "-version" ]; then
     ghr --help
     exit 0
 else
