@@ -1,6 +1,6 @@
 FROM retgits/goc:1.0.2
 
-LABEL "name"="genericgocenter"
+LABEL "name"="gocenter"
 LABEL "maintainer"="retgits"
 LABEL "version"="0.2.1"
 
