@@ -9,7 +9,7 @@
 | Purpose           | A wrapper around the [goc](https://github.com/jfrog/goc) to use with [GoCenter](https://gocenter.jfrog.com/stats) |
 | Usage             | Build Go apps using modules resolved from [GoCenter](https://gocenter.jfrog.com/stats)                            |
 | Base container    | [golang:alpine](https://hub.docker.com/_/golang?tab=description)                                                  |
-| Language runtimes | [Go 1.11.5](https://golang.org/doc/go1.11)                                                                        |
+| Language runtimes | [Go 1.12.1](https://golang.org/doc/go1.12)                                                                        |
 | Additional tools  | git, curl, wget                                                                                                   |
 
 ## Usage
