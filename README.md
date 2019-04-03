@@ -1,7 +1,7 @@
 # GitHub Actions
 
 ![license](https://img.shields.io/github/license/retgits/actions.svg?style=flat-square)
-![stability](https://img.shields.io/badge/stability-alpha-yellowgreen.svg?style=flat-square)
+![stability](https://img.shields.io/badge/stability-beta-yellowgreen.svg?style=flat-square)
 
 ![actions](./actions.jpg)
 
