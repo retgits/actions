@@ -1,4 +1,4 @@
-FROM retgits/jfrog-cli:1.24.3
+FROM retgits/jfrog-cli:1.25.0
 
 LABEL "name"="jfrog-cli"
 LABEL "maintainer"="retgits"
