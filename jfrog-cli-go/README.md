@@ -10,7 +10,7 @@
 | Usage             | Executes commands against [JFrog Artifactory](https://jfrog.com/artifactory) |
 | Limitations       | Only supports JFrog Artifactory, not any of the other JFrog products         |
 | Base container    | [golang:alpine](https://hub.docker.com/_/golang?tab=description)             |
-| Language runtimes | [Go 1.12.1](https://golang.org/doc/go1.12)                                   |
+| Language runtimes | [Go 1.12.6](https://golang.org/doc/go1.12)                                   |
 | Additional tools  | git, curl, wget                                                              |
 
 ## Usage

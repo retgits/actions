@@ -1,8 +1,8 @@
-FROM retgits/jfrog-cli:1.25.0
+FROM retgits/jfrog-cli:1.26.0
 
 LABEL "name"="jfrog-cli"
 LABEL "maintainer"="retgits"
-LABEL "version"="0.3.1"
+LABEL "version"="0.4.0"
 
 LABEL "com.github.actions.name"="JFrog CLI for GitHub Actions"
 LABEL "com.github.actions.description"="Runs a JFrog CLI Command"
