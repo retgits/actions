@@ -1,5 +1,7 @@
 # GitHub Actions
 
+_With the introduction of the [new GitHub actions](https://github.blog/2019-08-08-github-actions-now-supports-ci-cd/) format, the actions in this repository are archived and no longer maintained_
+
 ![license](https://img.shields.io/github/license/retgits/actions.svg?style=flat-square)
 ![stability](https://img.shields.io/badge/stability-beta-yellowgreen.svg?style=flat-square)
 
